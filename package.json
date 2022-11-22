@@ -1,6 +1,6 @@
 {
   "name": "dayjs-plugin-monthweek",
-  "version": "0.0.2",
+  "version": "0.0.4",
   "description": "Gets the week of the month",
   "keywords": [
     "dayjs",
@@ -8,13 +8,17 @@
     "typescript"
   ],
   "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "umd:main": "dist/umd/index.js",
   "types": "dist/types/index.d.js",
   "files": [
     "/dist"
   ],
   "scripts": {
-    "build": "npm run build:cjs && npm run build:types",
+    "build": "npm run build:cjs && npm run build:esm && npm run build:umd && npm run build:types",
     "build:cjs": "rimraf dist/cjs && tsc -p config/tsconfig.cjs.json",
+    "build:esm": "rimraf dist/esm && tsc -p config/tsconfig.esm.json",
+    "build:umd": "rimraf dist/umd && webpack --config config/webpack.config.js",
     "build:types": "rimraf dist/types && tsc -p config/tsconfig.types.json",
     "clean": "rimraf dist",
     "package": "npm run build && npm pack",
@@ -31,7 +35,10 @@
     "jest": "^29.3.1",
     "rimraf": "^3.0.2",
     "ts-jest": "^29.0.3",
+    "ts-loader": "^9.4.1",
     "ts-node": "^10.9.1",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.3",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
   }
 }
