@@ -1,13 +1,13 @@
 {
   "name": "dayjs-plugin-monthweek",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Gets the week of the month",
   "keywords": [
     "dayjs",
     "plugin",
     "typescript"
   ],
-  "main": "dist/index.js",
+  "main": "dist/cjs/index.js",
   "types": "dist/types/index.d.js",
   "files": [
     "/dist"
