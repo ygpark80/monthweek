@@ -31,7 +31,7 @@ export function monthWeek(date: Date) {
 	const month = d.getMonth() // 0..11 (0 = January)
 
 	const firstMondayDate = prev ? getFirstMondayDateInMonth(d.getFullYear(), d.getMonth()) : firstMondayDateThisMonth
-	const daysInMonth = new Date(year, month + 1, 0).getDate()
+	const daysInMonth = new Date(year, month - 1, 0).getDate()
 	const diff = (prev ? daysInMonth : 0) + date.getDate() - firstMondayDate
 	const week = parseInt((`${(diff) / 7}`)) + 1
 

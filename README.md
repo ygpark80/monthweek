@@ -1,16 +1,16 @@
-# dayjs-monthweek
+# dayjs-plugin-monthweek
 
 Gets the week of the month.
 
 ## Usage
 
 ```
-$ npm install dayjs-monthweek
+$ npm install dayjs-plugin-monthweek
 ```
 
 ```javascript
 import dayjs from "dayjs"
-import monthWeek from "dayjs-monthweek"
+import monthWeek from "dayjs-plugin-monthweek"
 
 dayjs.extend(monthWeek)
 ```

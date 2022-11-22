@@ -1,5 +1,5 @@
 {
-  "name": "dayjs-monthweek",
+  "name": "dayjs-plugin-monthweek",
   "version": "0.0.1",
   "description": "Gets the week of the month",
   "keywords": [
