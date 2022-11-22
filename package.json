@@ -1,0 +1,37 @@
+{
+  "name": "dayjs-monthweek",
+  "version": "0.0.1",
+  "description": "Gets the week of the month",
+  "keywords": [
+    "dayjs",
+    "plugin",
+    "typescript"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/types/index.d.js",
+  "files": [
+    "/dist"
+  ],
+  "scripts": {
+    "build": "npm run build:cjs && npm run build:types",
+    "build:cjs": "rimraf dist/cjs && tsc -p config/tsconfig.cjs.json",
+    "build:types": "rimraf dist/types && tsc -p config/tsconfig.types.json",
+    "clean": "rimraf dist",
+    "package": "npm run build && npm pack",
+    "test": "jest --no-cache --runInBand"
+  },
+  "author": "YG Park <ygpark80@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "dayjs": "^1.11.6"
+  },
+  "devDependencies": {
+    "@testdeck/jest": "^0.3.2",
+    "@types/jest": "^29.2.3",
+    "jest": "^29.3.1",
+    "rimraf": "^3.0.2",
+    "ts-jest": "^29.0.3",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
+  }
+}
