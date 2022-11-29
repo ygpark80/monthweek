@@ -21,5 +21,7 @@ class TestSuite {
 		expect(dayjs(new Date(2022, 4, 4)).monthWeek()).toStrictEqual({ year: 2022, month: 4, week: 1 })
 		expect(dayjs(new Date(2022, 4, 10)).monthWeek()).toStrictEqual({ year: 2022, month: 4, week: 2 })
 		expect(dayjs(new Date(2021, 0, 1)).monthWeek()).toStrictEqual({ year: 2020, month: 11, week: 5 })
+		expect(dayjs(new Date(2022, 10, 28)).monthWeek()).toStrictEqual({ year: 2022, month: 11, week: 1 })
+		expect(dayjs(new Date(2022, 10, 27)).monthWeek()).toStrictEqual({ year: 2022, month: 10, week: 4 })
 	}
 }

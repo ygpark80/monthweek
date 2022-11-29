@@ -23,6 +23,8 @@ interface MonthWeek {
 }
 
 export function monthWeek(date: Date) {
+	// find thurday
+	date = date.getDay() == Days.SUNDAY ? new Date(new Date(date).setDate(date.getDate() - 3)) : new Date(new Date(date).setDate(date.getDate() + Days.THURSDAY - date.getDay()))
 	const firstMondayDateThisMonth = getFirstMondayDateInMonth(date.getFullYear(), date.getMonth())
 	const prev = date.getDate() < firstMondayDateThisMonth // use last month?
 	const d = prev ? new Date(date.setMonth(date.getMonth() - 1)) : date
@@ -32,7 +34,7 @@ export function monthWeek(date: Date) {
 
 	const firstMondayDate = prev ? getFirstMondayDateInMonth(d.getFullYear(), d.getMonth()) : firstMondayDateThisMonth
 	const daysInMonth = new Date(year, month - 1, 0).getDate()
-	const diff = (prev ? daysInMonth : 0) + date.getDate() - firstMondayDate
+	const diff = (prev ? daysInMonth : 0) + d.getDate() - firstMondayDate
 	const week = parseInt((`${(diff) / 7}`)) + 1
 
 	return { year, month, week }
